@@ -34,3 +34,32 @@ vector <string> split(string a)
 	out.push_back(temp);
 	return out;
 }
+vector <string> read_file(char* path)
+{
+	ifstream file_dir;
+	vector <string> out;
+	file_dir.open(path);
+	string line;
+	file_dir >> line;
+	if (line == "")
+	{
+		cout << "Error: file is empty";
+		exit(0);
+	}
+	file_dir.close();
+	file_dir.open(path);
+	if (file_dir.is_open())
+	{
+		while (getline(file_dir, line))
+		{
+			out.push_back(line);
+		}
+		file_dir.close();
+	}
+	else
+	{
+		cout << "Error: can't open file";
+		exit(0);
+	}
+	return out;
+}
