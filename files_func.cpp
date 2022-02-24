@@ -63,3 +63,17 @@ vector <string> read_file(char* path)
 	}
 	return out;
 }
+
+bool check_path(string str, string &path)
+{
+	for (int i = 0; str[i] != '\0'; i++) {
+		if (str[i] != ' ')
+			path += str[i];
+		else {
+			path = "";
+			cout << "Error: a lot of arguments";
+			return false;
+		}
+	}
+	return true;
+}
