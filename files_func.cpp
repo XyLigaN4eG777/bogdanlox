@@ -1,4 +1,4 @@
-void read_file(vector <string> &commands, string &path)     //чтение файла
+/*void read_file(vector <string> &commands, string &path)     //чтение файла
 {
 	ifstream file;
 	string str;
@@ -14,7 +14,7 @@ void read_file(vector <string> &commands, string &path)     //чтение фа�
 	}
 	file.close();
 }
-
+*/
 vector <string> split(string a)
 {
 	vector <string> out;
