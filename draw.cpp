@@ -1,5 +1,3 @@
-#include "paint.h"
-
 void itc_empty_circle(int x_coord, int y_coord, char simv, int radius, vector<vector<char> > &arr)
 {
     int error = 0;
@@ -59,3 +57,27 @@ void itc_circle(int x_coord, int y_coord, char simv, int radius, vector<vector<c
         counter = 0;
         flag = 1;
     }
+}
+
+void itc_empty_rectangle(int x, int y, int w, int h, char simv, vector<vector<char> >& arr)
+{
+    for (int i = x; i < x + w; i++)
+        arr[y][i] = simv;
+    for (int i = y + 1; i < y + h - 1; i++) 
+        arr[i][x] = simv;
+    for (int i = y + 1; i < y + h - 1; i++) 
+        arr[i][x + w - 1] = simv;
+    for (int i = x; i < x + w; i++) 
+        arr[y + h - 1][i] = simv;
+}
+
+void itc_rectangle(int x, int y, int w, int h, char simv, vector<vector<char> >& arr)
+{
+    for (int i = x; i < x + w; i++)
+    {
+        for (int j = y; j < y + h; j++)
+        {
+            arr[j][i] = simv;
+        }
+    }
+}
