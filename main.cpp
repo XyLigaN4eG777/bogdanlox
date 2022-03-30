@@ -217,7 +217,7 @@ void menu(SDL_Renderer* renderer) {
     rect(renderer, 620, 845, 10, 60);
     rect(renderer, 630, 835, 30, 10);
     rect(renderer, 640, 830, 40, 10);
-
+   
     rect(renderer, 700, 800, 5, 100);
     rect(renderer, 700, 900, 5, 100);
     rect(renderer, 700, 800, 100, 5);
@@ -237,28 +237,30 @@ void menu(SDL_Renderer* renderer) {
 }
 
 void pole(SDL_Renderer* renderer) {
-    SDL_SetRenderDrawColor(renderer, 0, 0, 0, 0);
+    SDL_SetRenderDrawColor(renderer, 218, 189, 171, 0);
     SDL_RenderClear(renderer);
-    SDL_SetRenderDrawColor(renderer, 165, 30, 0, 0);
-    rect(renderer, 200, 200, 250, 50);
-    rect(renderer, 200, 550, 250, 50);
-    rect(renderer, 400, 200, 250, 50);
-    rect(renderer, 400, 200, 250, 50);
+    SDL_SetRenderDrawColor(renderer, 0, 0, 0, 0);
+    rect(renderer, 15, 0, 1000, 5);
+    rect(renderer, 15, 15, 5, 1000);
+    rect(renderer, 980, 15, 1000, 5);
+    rect(renderer, 20, 980, 5, 1000);
+    SDL_SetRenderDrawColor(renderer, 90, 91, 49, 0);
+    rect(renderer, 0, 0, 1000, 15);
+    rect(renderer, 0, 0, 15, 1000);
+    rect(renderer, 985, 0, 1000, 15);
+    rect(renderer, 15, 985, 15, 1000);
+    rect(renderer, 208, 100, 200, 188);
+    rect(renderer, 208, 400, 200, 188);
+    rect(renderer, 208, 700, 200, 188);
+    rect(renderer, 584, 100, 200, 188);
+    rect(renderer, 584, 400, 200, 188);
+    rect(renderer, 584, 700, 200, 188);
+
+
+    
+
     SDL_RenderPresent(renderer);
     SDL_RenderClear(renderer);
-    int level1[11][20] = {
-{0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 1, 0, 1, 0, 0, 0, 0, 0, 0, 0},
-{0, 0, 1, 0, 1, 0, 0, 0, 1, 1, 1, 0, 1, 0, 0, 1, 0, 1, 0, 0},
-{0, 0, 1, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 1, 0, 0},
-{0, 0, 1, 0, 1, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, 1, 0, 1, 0, 0},
-{0, 0, 0, 0, 0, 0, 0, 1, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0},
-{0, 0, 0, 1, 0, 0, 0, 0, 1, 1, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0},
-{0, 0, 0, 0, 0, 0, 0, 1, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0},
-{0, 0, 1, 0, 1, 0, 0, 1, 0, 1, 0, 0, 0, 0, 0, 1, 0, 1, 0, 0},
-{0, 0, 1, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 1, 0, 1, 0, 0},
-{0, 0, 1, 0, 1, 0, 0, 0, 1, 1, 1, 0, 0, 0, 0, 1, 0, 1, 0, 0},
-{0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0}
-    };
 }
 
 int main(int argc, char* args[])
@@ -267,24 +269,26 @@ int main(int argc, char* args[])
     SDL_Window* window;
     SDL_Init(SDL_INIT_VIDEO);
     SDL_CreateWindowAndRenderer(WINDOW_WIDTH, WINDOW_WIDTH, 0, &window, &renderer);
-    SDL_SetRenderDrawColor(renderer, 0, 0, 0, 0);
+    SDL_SetRenderDrawColor(renderer, 116, 78, 59, 0);
     SDL_RenderClear(renderer);
-    SDL_SetRenderDrawColor(renderer, 160, 54, 35, 0);
-    menu(renderer);
+    SDL_SetRenderDrawColor(renderer, 0, 0, 0, 0);
+    //menu(renderer);
     SDL_RenderPresent(renderer);
     SDL_RenderClear(renderer);
-    char ch;
-    int k = 0;
-    int code;
-    while (k != 1)
-    {
-        ch = _getch();
-        code = static_cast<int>(ch);
-        if (ch == 13)
-            k = 1;
-    }
+    //char ch;
+    //int k = 0;
+    //int code;
+    //while (k != 1)
+    //{
+        //ch = _getch();
+        //code = static_cast<int>(ch);
+        //if (ch == 13) 
+            //k = 1;
+    //}
     pole(renderer);
-    SDL_Delay(30000);
+    SDL_Delay(3000);
     SDL_Quit();
     return 0;
 }
+
+ 
